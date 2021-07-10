@@ -1,0 +1,10 @@
+## Interface: 90100
+## Title: Impresive
+## Author: John Kordich
+## Version: 1.0
+
+main.lua
+
+# This is a mod for World of Warcraft that replaces letters in the chat that you send randomly.
+# It's basically extremely annoying to most people, but I think it's beautiful
+# It will probably run on any version of wow, but I've only tested it on Retail 9.1
