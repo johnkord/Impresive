@@ -21,6 +21,16 @@ characterReplacement['Y'] = {2, 'Y', 'Ý'}
 characterReplacement['b'] = {2, 'b', 'ß'}
 characterReplacement['B'] = {2, 'B', 'ß'}
 
+local impresive_enabled = true;
+
+SLASH_IMPON1, SLASH_IMPOFF1 = '/impon', '/impoff';
+function SlashCmdList.IMPON(msg, editbox)
+    impresive_enabled = true;
+end
+function SlashCmdList.IMPOFF(msg, editbox)
+    impresive_enabled = false;
+end
+
 function has_key(table, key)
     return table[key]~=nil
 end
@@ -40,7 +50,10 @@ function Impress_Message(msg)
 end
 
 function Impresive_SendChatMessage(msg, system, language, channel)
-	SavedSendChatMessage(Impress_Message(msg), system, language, channel);
+    if impresive_enabled == true then
+        msg = Impress_Message(msg)
+    end
+	SavedSendChatMessage(msg, system, language, channel);
 end
 
 SendChatMessage = Impresive_SendChatMessage;
